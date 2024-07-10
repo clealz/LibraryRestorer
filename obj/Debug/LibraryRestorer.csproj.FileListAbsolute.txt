@@ -1,0 +1,10 @@
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\bin\Debug\LibraryRestorer.exe
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\bin\Debug\LibraryRestorer.pdb
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.csproj.AssemblyReference.cache
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.frmMain.resources
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.Properties.Resources.resources
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.csproj.GenerateResource.cache
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.csproj.CoreCompileInputs.cache
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.exe
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.pdb
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\bin\Debug\LibraryRestorer.exe.config
