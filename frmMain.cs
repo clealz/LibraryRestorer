@@ -15,6 +15,9 @@ namespace LibraryRestorer
         private int borderRadius = 5;
         private int borderSize = 1;
         private Color borderColor;
+
+        private string nombre = $"{Program.nombrePrograma}";
+        private string version = $"{Global.DevuelveVersion()}";
         #endregion -> CAMPOS
 
         #region -> CONSTRUCTOR
@@ -23,6 +26,10 @@ namespace LibraryRestorer
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
+
+            this.Text = $"{nombre} (Ver.{version})";
+            lblTitle.Text = $"{nombre} (Ver.{version})";
+
             SetColors();
         }
 
@@ -198,18 +205,19 @@ namespace LibraryRestorer
         #region -> METODOS
         private void SetColors()
         {
-            Image ico = new Icon(this.Icon, 18, 18).ToBitmap();
-            iconTitleBar.Image = ico;
+            Global.icon = new Icon(this.Icon, 18, 18).ToBitmap();
+            Global.Logo = new Icon(this.Icon, 256, 256).ToBitmap();
+            iconTitleBar.Image = Global.icon;
 
             borderColor = SystemColors.Control;
             this.BackColor = borderColor;
             tableMain.BackColor = borderColor;
 
-            iconTitleBar.BackColor = SystemColors.ActiveBorder;
-            lblTitle.BackColor = SystemColors.ActiveBorder;
-            btnHelp.BackColor = SystemColors.ActiveBorder;
-            btnMinimize.BackColor = SystemColors.ActiveBorder;
-            btnClose.BackColor = SystemColors.ActiveBorder;
+            iconTitleBar.BackColor = SystemColors.ActiveCaption;
+            lblTitle.BackColor = SystemColors.ActiveCaption;
+            btnHelp.BackColor = SystemColors.ActiveCaption;
+            btnMinimize.BackColor = SystemColors.ActiveCaption;
+            btnClose.BackColor = SystemColors.ActiveCaption;
         }
         /// <summary>
         /// Carga la lista de los permisos completa
@@ -309,12 +317,12 @@ namespace LibraryRestorer
                 .Where(row => row.Cells[chkcCheck.Name].Value.ToString().Equals(Convert.ToString(false))).Any())
             {
                 btnTodosNinguno.Image = ListCheck.Images[ListCheck.Images.IndexOfKey("check")];
-                btnTodosNinguno.Text = "Marcar Todos";
+                btnTodosNinguno.Text = " Marcar Todos";
             }
             else
             {
                 btnTodosNinguno.Image = ListCheck.Images[ListCheck.Images.IndexOfKey("uncheck")];
-                btnTodosNinguno.Text = "Desmarcar Todos";
+                btnTodosNinguno.Text = " Desmarcar Todos";
             }
         }
         #endregion -> METODOS
@@ -414,6 +422,11 @@ namespace LibraryRestorer
             }
         }
 
+        /// <summary>
+        /// Evento generico clic para los botones de la barra de titulo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -421,12 +434,16 @@ namespace LibraryRestorer
             switch(btn.Name.Trim().Replace("btn", string.Empty).ToUpper())
             {
                 case "HELP":
+                    {
+                        frmHelp help = new frmHelp();
+                        help.ShowDialog(this);
+                    }
                     break;
                 case "MINIMIZE":
                     this.WindowState = FormWindowState.Minimized;
                     break;
                 case "CLOSE":
-                    Application.Exit();
+                    Environment.Exit(0);
                     break;
             }
         }
@@ -440,6 +457,21 @@ namespace LibraryRestorer
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            btnClose.Image = ListTitleBar.Images[ListTitleBar.Images.IndexOfKey("close_W")];
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.Image = ListTitleBar.Images[ListTitleBar.Images.IndexOfKey("close_B")];
+        }
+
+        private void btnClose_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnClose.Image = ListTitleBar.Images[ListTitleBar.Images.IndexOfKey("close_B")];
         }
         #endregion -> EVENTOS
     }

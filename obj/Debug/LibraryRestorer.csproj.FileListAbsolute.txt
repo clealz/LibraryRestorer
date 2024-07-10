@@ -8,3 +8,4 @@ D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\o
 D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.exe
 D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.pdb
 D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\bin\Debug\LibraryRestorer.exe.config
+D:\Users\camil\Documents\SharpDevelop Projects\LibraryRestorer\LibraryRestorer\obj\Debug\LibraryRestorer.frmHelp.resources

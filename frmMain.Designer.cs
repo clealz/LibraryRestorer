@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.ListCheck = new System.Windows.Forms.ImageList(this.components);
+            this.ListFolders = new System.Windows.Forms.ImageList(this.components);
+            this.ListTitleBar = new System.Windows.Forms.ImageList(this.components);
             this.tableMain = new System.Windows.Forms.TableLayoutPanel();
             this.btnTodosNinguno = new System.Windows.Forms.Button();
-            this.ListCheck = new System.Windows.Forms.ImageList(this.components);
             this.lblLeyenda = new System.Windows.Forms.Label();
             this.pnlSeparador = new System.Windows.Forms.Panel();
             this.dgvItems = new System.Windows.Forms.DataGridView();
@@ -47,12 +49,40 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.ListFolders = new System.Windows.Forms.ImageList(this.components);
-            this.ListTitleBar = new System.Windows.Forms.ImageList(this.components);
             this.tableMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconTitleBar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ListCheck
+            // 
+            this.ListCheck.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListCheck.ImageStream")));
+            this.ListCheck.TransparentColor = System.Drawing.Color.Transparent;
+            this.ListCheck.Images.SetKeyName(0, "check");
+            this.ListCheck.Images.SetKeyName(1, "uncheck");
+            // 
+            // ListFolders
+            // 
+            this.ListFolders.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListFolders.ImageStream")));
+            this.ListFolders.TransparentColor = System.Drawing.Color.Transparent;
+            this.ListFolders.Images.SetKeyName(0, "3DObjects");
+            this.ListFolders.Images.SetKeyName(1, "Pictures");
+            this.ListFolders.Images.SetKeyName(2, "Desktop");
+            this.ListFolders.Images.SetKeyName(3, "Music");
+            this.ListFolders.Images.SetKeyName(4, "Documents");
+            this.ListFolders.Images.SetKeyName(5, "Videos");
+            this.ListFolders.Images.SetKeyName(6, "Downloads");
+            // 
+            // ListTitleBar
+            // 
+            this.ListTitleBar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListTitleBar.ImageStream")));
+            this.ListTitleBar.TransparentColor = System.Drawing.Color.Transparent;
+            this.ListTitleBar.Images.SetKeyName(0, "help_B");
+            this.ListTitleBar.Images.SetKeyName(1, "help_W");
+            this.ListTitleBar.Images.SetKeyName(2, "minimize_B");
+            this.ListTitleBar.Images.SetKeyName(3, "minimize_W");
+            this.ListTitleBar.Images.SetKeyName(4, "close_B");
+            this.ListTitleBar.Images.SetKeyName(5, "close_W");
             // 
             // tableMain
             // 
@@ -99,23 +129,17 @@
             this.btnTodosNinguno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTodosNinguno.ImageKey = "check";
             this.btnTodosNinguno.ImageList = this.ListCheck;
-            this.btnTodosNinguno.Location = new System.Drawing.Point(354, 63);
+            this.btnTodosNinguno.Location = new System.Drawing.Point(336, 63);
+            this.btnTodosNinguno.MaximumSize = new System.Drawing.Size(125, 26);
+            this.btnTodosNinguno.MinimumSize = new System.Drawing.Size(125, 26);
             this.btnTodosNinguno.Name = "btnTodosNinguno";
-            this.btnTodosNinguno.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.btnTodosNinguno.Size = new System.Drawing.Size(107, 26);
+            this.btnTodosNinguno.Size = new System.Drawing.Size(125, 26);
             this.btnTodosNinguno.TabIndex = 0;
-            this.btnTodosNinguno.Text = " Marcar Todos";
+            this.btnTodosNinguno.Text = " Desmarcar Todos";
             this.btnTodosNinguno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTodosNinguno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTodosNinguno.UseVisualStyleBackColor = true;
             this.btnTodosNinguno.Click += new System.EventHandler(this.btnTodosNinguno_Click);
-            // 
-            // ListCheck
-            // 
-            this.ListCheck.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListCheck.ImageStream")));
-            this.ListCheck.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListCheck.Images.SetKeyName(0, "check");
-            this.ListCheck.Images.SetKeyName(1, "uncheck");
             // 
             // lblLeyenda
             // 
@@ -123,8 +147,9 @@
             this.lblLeyenda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLeyenda.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLeyenda.Location = new System.Drawing.Point(43, 60);
+            this.lblLeyenda.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblLeyenda.Name = "lblLeyenda";
-            this.lblLeyenda.Size = new System.Drawing.Size(305, 32);
+            this.lblLeyenda.Size = new System.Drawing.Size(290, 32);
             this.lblLeyenda.TabIndex = 1;
             this.lblLeyenda.Text = "Selecciona las Bibliotecas que quieres anclar";
             this.lblLeyenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,14 +186,14 @@
             this.txtcDescription,
             this.chkcCheck});
             this.tableMain.SetColumnSpan(this.dgvItems, 4);
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.GridColor = System.Drawing.SystemColors.Control;
@@ -178,12 +203,12 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Gray;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gray;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(418, 528);
             this.dgvItems.TabIndex = 3;
@@ -262,7 +287,7 @@
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ImageKey = "min_B";
+            this.btnMinimize.ImageKey = "minimize_B";
             this.btnMinimize.ImageList = this.ListTitleBar;
             this.btnMinimize.Location = new System.Drawing.Point(424, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
@@ -287,6 +312,9 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button_Click);
+            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseDown);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // lblTitle
             // 
@@ -303,29 +331,6 @@
             this.lblTitle.Text = "Library Restorer";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlebar_MouseDown);
-            // 
-            // ListFolders
-            // 
-            this.ListFolders.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListFolders.ImageStream")));
-            this.ListFolders.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListFolders.Images.SetKeyName(0, "3DObjects");
-            this.ListFolders.Images.SetKeyName(1, "Pictures");
-            this.ListFolders.Images.SetKeyName(2, "Desktop");
-            this.ListFolders.Images.SetKeyName(3, "Music");
-            this.ListFolders.Images.SetKeyName(4, "Documents");
-            this.ListFolders.Images.SetKeyName(5, "Videos");
-            this.ListFolders.Images.SetKeyName(6, "Downloads");
-            // 
-            // ListTitleBar
-            // 
-            this.ListTitleBar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ListTitleBar.ImageStream")));
-            this.ListTitleBar.TransparentColor = System.Drawing.Color.Transparent;
-            this.ListTitleBar.Images.SetKeyName(0, "help_B");
-            this.ListTitleBar.Images.SetKeyName(1, "help_W");
-            this.ListTitleBar.Images.SetKeyName(2, "min_B");
-            this.ListTitleBar.Images.SetKeyName(3, "min_W");
-            this.ListTitleBar.Images.SetKeyName(4, "close_B");
-            this.ListTitleBar.Images.SetKeyName(5, "close_W");
             // 
             // frmMain
             // 
