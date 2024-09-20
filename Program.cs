@@ -27,23 +27,25 @@ namespace LibraryRestorer
             {
                 Version ver = Global.DevuelveVersion();
 
-                IntPtr nWnd = FindWindow(null, nombrePrograma);
-                IntPtr nWndv = FindWindow(null, $"{nombrePrograma} (Ver. {ver.ToString()})");
+                Application.Run(new frmMain());
 
-                Application.EnableVisualStyles();
-                Application.DoEvents();
-                if (nWnd.Equals(new System.IntPtr(0)) && nWndv.Equals(new System.IntPtr(0)))
-                {
-                    Application.Run(new frmMain());
-                }
-                else
-                {
-                    MessageBox.Show($"¡La aplicación «{nombrePrograma}» ya se encuentra en ejecución!", nombrePrograma,
-                        MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                //IntPtr nWnd = FindWindow(null, nombrePrograma);
+                //IntPtr nWndv = FindWindow(null, $"{nombrePrograma} (Ver. {ver.ToString()})");
 
-                    SetForegroundWindow(nWnd);
-                    Application.Exit();
-                }
+                //Application.EnableVisualStyles();
+                //Application.DoEvents();
+                //if (nWnd.Equals(new System.IntPtr(0)) && nWndv.Equals(new System.IntPtr(0)))
+                //{
+                //    Application.Run(new frmMain());
+                //}
+                //else
+                //{
+                //    MessageBox.Show($"¡La aplicación «{nombrePrograma}» ya se encuentra en ejecución!", nombrePrograma,
+                //        MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                //    SetForegroundWindow(nWnd);
+                //    Application.Exit();
+                //}
 
                 //Application.SetCompatibleTextRenderingDefault(false);
                 //Application.Run(new mdiMain());

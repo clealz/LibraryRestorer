@@ -443,7 +443,7 @@ namespace LibraryRestorer
                     this.WindowState = FormWindowState.Minimized;
                     break;
                 case "CLOSE":
-                    Environment.Exit(0);
+                    Application.Exit();
                     break;
             }
         }
@@ -466,7 +466,10 @@ namespace LibraryRestorer
 
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            btnClose.Image = ListTitleBar.Images[ListTitleBar.Images.IndexOfKey("close_B")];
+            if(ListTitleBar.Images.Count > 0)
+            {
+                btnClose.Image = ListTitleBar.Images[ListTitleBar.Images.IndexOfKey("close_B")];
+            }
         }
 
         private void btnClose_MouseDown(object sender, MouseEventArgs e)
